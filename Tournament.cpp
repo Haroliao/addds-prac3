@@ -37,15 +37,12 @@ Player* Tournament::run(array<Player *, 8>  competitors){
     std::array<Player*, 4> firstwinners;
     std::array<Player*, 2> secondwinners;
     Player* finalwinner;
-    int j=0;
     
-     for(int i=0; i <8; i=i+2){ 
-        firstwinners.at(j) = match(competitors.at(i), competitors.at(i+1));
-        j++;
+     for(int i=0; i<4; i++){ 
+        firstwinners.at(i) = match(competitors.at(2*i), competitors.at(2*i+1));
      }
-     for (int i=0; i<4; i=i+2){
-        secondwinners.at(j)=match(firstwinners.at(i), firstwinners.at(i+1));
-        j++;
+     for (int i=0; i<2; i++){
+        secondwinners.at(i)=match(firstwinners.at(2*i), firstwinners.at(2*i+1));
      }
      finalwinner=match(secondwinners.at(0), secondwinners.at(1));
      return finalwinner;
