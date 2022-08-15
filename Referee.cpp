@@ -9,8 +9,6 @@ Referee::Referee(){
 
 }
 char Referee::refGame(Player* player1, Player* player2){
-    char move2=player2->makeMove();
-    char move1=player1->makeMove();
         if (player2->makeMove()=='R'&&player1->makeMove()=='R'){
           return 'T';
         }
